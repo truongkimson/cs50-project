@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    {% if errorMessage %}
+        <h3 style="color: red;">{{ errorMessage }}</h3>
+    {% endif %}
+    <h3>{{ question.questionText }}</h3>
+    <p>Question no: {{ question.id }}</p>
+    <p>Question: {{ question.questionText }}</p>
+    <p>Published date: {{ question.pubDate }}</p>
+    <br><br>
+    <p>Select a choice:</p>
+    <form action="{% url 'polls:vote' question.id %}" method=POST>
+        {% csrf_token %}
+        {% for c in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.id }}">
+            <label for="choice{{ forloop.counter }}">{{ c.choiceText }}</label>
+            <br><br>
+        {% endfor %}
+        <input type="submit" value="Vote!">
+    </form>
+    <p><a href="{% url 'polls:index' %}">Back to index</a></p>
+</body>

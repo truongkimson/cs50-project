@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div>
+        <h3>This is the index page of Polls app.</h3>
+        <ul>
+            {% if latestQuestionList %}
+                {% for question in latestQuestionList %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.questionText }}</li>
+                {% endfor %}
+            {% else %}
+                <p>No polls available.</p>
+            {% endif %}
+        </ul>
+    </div>
+</body>
