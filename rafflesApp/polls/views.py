@@ -28,6 +28,9 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
 
+    def get_queryset(self):
+        return Question.objects.filter(pubDate__lte=timezone.now())
+
 
 def vote(request, pk):
     question = get_object_or_404(Question, pk=pk)

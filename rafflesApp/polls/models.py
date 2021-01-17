@@ -6,7 +6,9 @@ from django.utils import timezone
 
 
 class Question(models.Model):
-    questionText = models.CharField(max_length=200)
+    questionText = models.CharField(max_length=200,
+                                    verbose_name='question\'s text'
+                                    )
     pubDate = models.DateTimeField('date published')
 
     def __str__(self):
@@ -15,6 +17,10 @@ class Question(models.Model):
     def wasPublishedRecently(self):
         now = timezone.now()
         return now > self.pubDate > now - datetime.timedelta(days=1)
+
+    wasPublishedRecently.boolean = True
+    wasPublishedRecently.short_description = 'published recently?'
+    wasPublishedRecently.admin_order_field = 'pubDate'
 
 
 class Choice(models.Model):
