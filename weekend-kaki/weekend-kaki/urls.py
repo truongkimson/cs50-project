@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from polls import views
+from polls import views as polls_views
+from hangout import views as hangout_views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
-    path('', views.IndexView.as_view()),
+    path('', hangout_views.index),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('hangout/', include('hangout.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', LoginView.as_view()),
 ]
