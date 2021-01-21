@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 from polls import views as polls_views
 from hangout import views as hangout_views
-from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('', hangout_views.index),
@@ -25,5 +24,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hangout/', include('hangout.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('login/', LoginView.as_view()),
 ]
