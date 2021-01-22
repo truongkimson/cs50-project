@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'hangout/style.css' %}">
-    </head>
-    <body>
-        <h3>This is an profile page</h3>
-        <div>
-            {{ session.keys }}
-            <br>
-            {{ request.user }}
-            <br>
-            {{ request.user.is_authenticated }}
-        </div>
-    </body>
-</html>
+{% extends 'hangout/base.html' %}
+{% block content %}
+    <h1>This is an profile page</h1>
+    <div>
+        {{ session.keys }}
+        <br>
+        {{ request.user }}
+        <br>
+        {{ session }}
+        <br>
+        {{ request.user.is_authenticated }}
+    </div>
+{% endblock %}

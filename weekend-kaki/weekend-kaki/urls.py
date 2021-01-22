@@ -19,7 +19,7 @@ from polls import views as polls_views
 from hangout import views as hangout_views
 
 urlpatterns = [
-    path('', hangout_views.index),
+    path('', hangout_views.home, name='home'),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('hangout/', include('hangout.urls')),

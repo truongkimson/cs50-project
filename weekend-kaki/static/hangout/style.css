@@ -1,7 +1,92 @@
-#login-button {
-    padding: 20px;
-    margin: 0px;
-    border: 1px solid black;
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+}
+
+ul.nav-bar li {
+    display: inline-block;
+}
+
+ul.nav-bar li a {
+    display: block;
     text-decoration: none;
-    float:right;
+    padding: 32px 32px;
+    color: white;
+    font-size: 16px;
+}
+
+ul.nav-bar li a:hover {
+    background-color: #111;
+}
+
+#login-button {
+    position: absolute;
+    right: 0px;
+}
+
+#logo-item {
+    position: absolute;
+    left: 0px;
+}
+
+img.logo {
+    height: 82px;
+    width: auto;
+}
+
+div.main-content {
+    text-align: center;
+}
+
+div.welcome-message p {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 25px 0px 10px 0px;
+    margin: 0px;
+}
+
+div.welcome-message p.welcome-subtext {
+    font-size: 18px;
+    padding: 0px 0px 30px 0px;
+}
+
+div.guide-container {
+    overflow: auto;
+}
+
+div.guide-container p.guide {
+    text-align: justify;
+    font-size: 18px;
+    padding: 0px 20px;
+    margin: 0px;
+}
+
+.guide-heading {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 20px 10px 20px;
+    margin: 0px;
+}
+
+#hangout-img {
+    width: 60%;
+    height: auto;
+    float: right;
+    padding: 20px;
+}
+
+#discover-img {
+    width: 60%;
+    height: auto;
+    float: left;
+    padding: 20px;
 }
