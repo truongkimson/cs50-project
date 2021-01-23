@@ -90,3 +90,7 @@ div.guide-container p.guide {
     float: left;
     padding: 20px;
 }
+
+p.error-message {
+    color: red;
+}

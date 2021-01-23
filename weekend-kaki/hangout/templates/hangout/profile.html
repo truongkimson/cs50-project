@@ -1,13 +1,28 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
-    <h1>This is an profile page</h1>
+    <h1>User Profile</h1>
     <div>
-        {{ session.keys }}
-        <br>
-        {{ request.user }}
-        <br>
-        {{ session }}
-        <br>
-        {{ request.user.is_authenticated }}
+        <table>
+            <tr>
+                <td>Full name:</td>
+                <td>{{ request.user.get_full_name }}</td>
+            </tr>
+            <tr>
+                <td>Account name:</td>
+                <td>{{ request.user.get_username }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{ request.user.email }}</td>
+            </tr>
+            <tr>
+                <td>Date joined:</td>
+                <td>{{ request.user.date_joined }}</td>
+            </tr>
+            <tr>
+                <td>Last login:</td>
+                <td>{{ request.user.last_login }}</td>
+            </tr>
+        </table>
     </div>
 {% endblock %}

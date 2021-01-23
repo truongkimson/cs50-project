@@ -7,4 +7,5 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('list/', views.list, name='list'),
     path('discover/', views.discover, name='discover'),
+    path('<int:hangout_id>/detail/', views.detail, name='detail'),
 ]
