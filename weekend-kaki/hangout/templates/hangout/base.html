@@ -14,6 +14,7 @@
                 ><li><a href="{% url 'hangout:profile' %}">My Profile</a></li
                 ><li id="login-button">{% block login %}
                     {% if user.is_authenticated %}
+                    <span id="user-fullname">{{ user.get_full_name }}</span>
                     <a href="{% url 'logout' %}">LOG OUT</a>
                     {% else %}
                     <a href="{% url 'login' %}">LOG IN</a>

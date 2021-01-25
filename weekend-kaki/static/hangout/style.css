@@ -3,6 +3,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.message {
+    color: red;
+}
+
 ul.nav-bar {
     list-style-type: none;
     margin: 0;
@@ -30,6 +34,12 @@ ul.nav-bar li a:hover {
 #login-button {
     position: absolute;
     right: 0px;
+}
+
+#login-button a {
+    padding: 13px;
+    border: none;
+    margin: 0px;
 }
 
 #logo-item {
@@ -93,4 +103,10 @@ div.guide-container p.guide {
 
 p.error-message {
     color: red;
+}
+
+#user-fullname {
+    color: white;
+    padding: 10px;
+    display: inline-block;
 }

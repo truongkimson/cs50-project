@@ -1,4 +1,17 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
 <h1>Create page</h1>
+<form method="post" action="{% url 'hangout:create' %}">
+{% csrf_token %}
+<table>
+    {% for field in form.visible_fields %}
+    <tr>
+        <td>{{ field.label_tag }}</td>
+        <td>{{ field }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<input type="submit" value="Create">
+</form>
+
 {% endblock %}

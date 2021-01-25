@@ -1,4 +1,10 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
-<h1>Discover page</h1>
+<h1>Discover Hangouts happening</h1>
+<ul>
+    {% for hangout in hangout_list %}
+    <li><a href="{% url 'hangout:detail' hangout.id %}">{{ hangout }}</a></li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

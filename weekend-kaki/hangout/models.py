@@ -15,7 +15,8 @@ class Hangout(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200)
     activity_type = models.CharField(max_length=2,
-                                     choices=activity_choices)
+                                     choices=activity_choices,
+                                     )
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
     description = models.TextField(null=True,

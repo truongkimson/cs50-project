@@ -1,0 +1,11 @@
+{% extends 'hangout/base.html' %}
+{% block content %}
+<h1>Modify page</h1>
+<form method="post" action="{% url 'hangout:modify' hangout_id %}">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <input type="submit" value="Save">
+</form>
+
+
+{% endblock %}

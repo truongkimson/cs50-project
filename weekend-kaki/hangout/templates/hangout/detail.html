@@ -1,4 +1,31 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
-<h1>Detail page for hangout no {{ hangout_id }}</h1>
+<h1>Detail page for {{ form.name.value }}</h1>
+{% if msg %}
+<p class="message">Hangout saved successfully!</p>
+{% endif %}
+<table>
+    {% for field in form %}
+    <tr>
+        <td>{{ field.label_tag }}</td>
+        <td>{{ field }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+<!-- <table>
+    {% for field in form %}
+    <tr>
+        <td>{{ field.label }}</td>
+        <td>{{ field.value }}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+<div>
+    <a href="{% url 'hangout:modify' hangout_id %}">Modify</a>
+    <a href="{% url 'hangout:delete' hangout_id %}">Delete</a>
+</div>
 {% endblock %}

@@ -1,7 +1,22 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
-<h1>Active Hangouts</h1>
-<p>{{ active_hangouts.1 }}</p>
-
-<h1>Previous Hangouts</h1>
+<h1>Upcoming Hangouts</h1>
+<h2>Hangouts created by you</h2>
+<ul>
+    {% for hangout in owned_hangouts %}
+    <li><a href="{% url 'hangout:detail' hangout.id %}">{{ hangout }}</a></li>
+    {% endfor %}
+</ul>
+<h2>Hangouts you are invited to</h2>
+<ul>
+    {% for hangout in participating_hangouts %}
+    <li><a href="{% url 'hangout:detail' hangout.id %}">{{ hangout }}</a></li>
+    {% endfor %}
+</ul>
+<h1>Past Hangouts</h1>
+<ul>
+    {% for hangout in past_hangouts %}
+    <li><a href="{% url 'hangout:detail' hangout.id %}">{{ hangout }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
