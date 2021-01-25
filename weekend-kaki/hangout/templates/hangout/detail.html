@@ -14,18 +14,11 @@
 </table>
 
 
-
-<!-- <table>
-    {% for field in form %}
-    <tr>
-        <td>{{ field.label }}</td>
-        <td>{{ field.value }}</td>
-    </tr>
-    {% endfor %}
-</table> -->
-
+{% if owned %}
 <div>
     <a href="{% url 'hangout:modify' hangout_id %}">Modify</a>
-    <a href="{% url 'hangout:delete' hangout_id %}">Delete</a>
+    <a href="{% url 'hangout:delete' hangout_id %}" 
+       onclick="return confirm('Do you really want to delete this Hangout?');">Delete</a>
 </div>
+{% endif %}
 {% endblock %}

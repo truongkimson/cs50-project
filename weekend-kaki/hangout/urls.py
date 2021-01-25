@@ -10,4 +10,5 @@ urlpatterns = [
     path('<int:hangout_id>/detail/', views.detail, name='detail'),
     path('<int:hangout_id>/modify/', views.modify, name='modify'),
     path('<int:hangout_id>/delete/', views.delete, name='delete'),
+    path('access-denied/', views.access_denied, name='access-denied'),
 ]
