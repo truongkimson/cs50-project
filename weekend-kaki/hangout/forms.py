@@ -7,7 +7,16 @@ class HangoutViewForm(forms.ModelForm):
     class Meta:
         model = Hangout
         fields = '__all__'
-        widgets = {'owner': forms.Select(attrs={'disabled': True}),
+        widgets = {'name': forms.TextInput(attrs={'class': 'form-control',
+                                                  'readonly': True}),
+                   'location': forms.TextInput(attrs={'class': 'form-control',
+                                                      'readonly': True}),
+                   'date': forms.DateInput(attrs={'class': 'form-control',
+                                                  'placeholder': 'DD/MM/YYYY'}),
+                   'description': forms.Textarea(attrs={'class': 'form-control',
+                                                        'rows': 3,
+                                                        'readonly': True}),
+                   'owner': forms.Select(attrs={'disabled': True}),
                    'participants': forms.SelectMultiple(attrs={'disabled': True})}
 
 

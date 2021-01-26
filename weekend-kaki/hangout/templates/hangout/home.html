@@ -3,21 +3,21 @@
         <div class="main-content">
             <div class="welcome-message">
                 <p>Welcome to Weekend Kaki!</p>
-                <p class="welcome-subtext">Weekend Kaki is a platform for you to plan the next outing with your kakis.</p>
+                <p class="welcome-subtext"><b>Weekend Kaki</b> is a platform for you to plan the next outing with your kakis.</p>
             </div>
             <div class="body-container">
                 <div class="guide-container">
                     {% load static %}
                     <img id="hangout-img" src="{% static 'hangout/create-hangout-guide.jpg' %}">
                     <p class="guide-heading">Create Hangout</p>
-                    <p class="guide">Head over to <a href="">Create Hangout</a> to start planning with just a few clicks.</p>
+                    <p class="guide">Head over to <a href="{% url 'hangout:create' %}">Create Hangout</a> to start planning with just a few clicks.</p>
                 </div>
                 <br>
                 <div class="guide-container">
                     <img id="discover-img" src="{% static 'hangout/discover-hangout-guide.jpg' %}">
                     <p class="guide-heading">Discover Hangout</p>
-                    <p class="guide">If you don't know yet what to do or where to go for your need meet-up,
-                        try out <a href="">Discover</a> to see what your friends or people near you are planning.</p>
+                    <p class="guide">If you don't know yet what to do or where to go for your next meet-up,
+                        try out <a href="{% url 'hangout:discover' %}">Discover</a> to see what your friends or people near you are planning.</p>
                 </div>
             </div>
         </div>

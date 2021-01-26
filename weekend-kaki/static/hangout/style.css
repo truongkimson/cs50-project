@@ -1,7 +1,7 @@
-body {
+/* body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */
 
 .message {
     color: red;
@@ -52,27 +52,26 @@ img.logo {
     width: auto;
 }
 
-div.main-content {
+.main-content {
     text-align: center;
 }
 
-div.welcome-message p {
+.welcome-message p {
     font-size: 40px;
-    font-weight: bold;
     padding: 25px 0px 10px 0px;
     margin: 0px;
 }
 
-div.welcome-message p.welcome-subtext {
+.welcome-message p.welcome-subtext {
     font-size: 18px;
     padding: 0px 0px 30px 0px;
 }
 
-div.guide-container {
+.guide-container {
     overflow: auto;
 }
 
-div.guide-container p.guide {
+.guide-container p.guide {
     text-align: justify;
     font-size: 18px;
     padding: 0px 20px;
@@ -101,7 +100,7 @@ div.guide-container p.guide {
     padding: 20px;
 }
 
-p.error-message {
+.error-message {
     color: red;
 }
 
