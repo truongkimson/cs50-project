@@ -30,4 +30,5 @@ class HangoutCreateForm(forms.ModelForm):
     class Meta:
         model = Hangout
         fields = '__all__'
-        widgets = {'owner': forms.HiddenInput()}
+        widgets = {'owner': forms.HiddenInput(),
+                   'participants': forms.SelectMultiple(attrs={'class': 'ui fluid search dropdown'})}

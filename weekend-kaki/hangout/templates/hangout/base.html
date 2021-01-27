@@ -4,18 +4,31 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Semantic-UI dropdown -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css" integrity="sha256-uJcWG4z2GKiVmddxuVaioBQqds/UAfBKpuMlw2Xmc7Y=" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css" integrity="sha256-Hj1yjp4fXn19k1azEVKT0aEvgUWt/HlVBO6xnhidiUs=" crossorigin="anonymous">
+
+        <!-- Date picker -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        
         <!--  Bootstrap4  -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hangout/style.css' %}">
 
         <!--  jQuery -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
         <!-- Bootstrap Date-Picker Plugin -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
         
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'hangout/style.css' %}">
+        <!-- Semantic-UI Plugin -->
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js" integrity="sha256-uEocYy6a0MpPLLHtYV7QAGdOeMRwE0Am2WtnOg/hBfM=" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js" integrity="sha256-k30cmb6hiQ/LGKpX2AcllUduUJ0kA4DKKStgUxkGQzM=" crossorigin="anonymous"></script>
+
         <nav>
             <ul class="nav-bar">
                 <li id="logo-item"><img class="logo" src="{% static 'hangout/logo.png' %}"></li
