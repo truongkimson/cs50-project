@@ -32,7 +32,7 @@ def create(request):
         input['owner'] = request.user.id
         form = HangoutCreateForm(input)
         form.save()
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('hangout:list'))
 
 
 @login_required

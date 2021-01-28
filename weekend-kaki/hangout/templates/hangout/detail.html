@@ -1,10 +1,10 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
-<h1>Detail page for {{ form.name.value }}</h1>
+<h1>{{ form.name.value }}'s Hangout details</h1>
 {% if msg %}
 <p class="message">Hangout saved successfully!</p>
 {% endif %}
-<div style="width: 50%;">
+<div class="container" style="width: 50%;">
     {% for field in form %}
     <div class="mb-3">
         <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>

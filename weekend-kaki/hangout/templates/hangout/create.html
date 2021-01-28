@@ -1,7 +1,8 @@
 {% extends 'hangout/base.html' %}
 {% block content %}
 
-<h1>Create page</h1>
+<h1>Create a Hangout</h1>
+<div class="container mb-3">
 <form method="post" action="{% url 'hangout:create' %}">
 {% csrf_token %}
   {% for field in form.visible_fields %}
@@ -12,6 +13,7 @@
   {% endfor %}
 <input type="submit" value="Create">
 </form>
+</div>
 
 <script>
     $(document).ready(function(){
