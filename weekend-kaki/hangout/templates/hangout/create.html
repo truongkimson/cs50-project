@@ -4,14 +4,12 @@
 <h1>Create page</h1>
 <form method="post" action="{% url 'hangout:create' %}">
 {% csrf_token %}
-<table>
-    {% for field in form.visible_fields %}
-    <tr>
-        <td>{{ field.label_tag }}</td>
-        <td>{{ field }}</td>
-    </tr>
-    {% endfor %}
-</table>
+  {% for field in form.visible_fields %}
+  <div class="mb-3" style="width: 50%;">
+    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+    {{ field }}
+  </div>
+  {% endfor %}
 <input type="submit" value="Create">
 </form>
 

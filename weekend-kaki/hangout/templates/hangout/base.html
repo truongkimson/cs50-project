@@ -37,12 +37,12 @@
                 ><li><a href="{% url 'hangout:list' %}">My Hangouts</a></li
                 ><li><a href="{% url 'hangout:discover' %}">Discover</a></li
                 ><li><a href="{% url 'hangout:profile' %}">My Profile</a></li
-                ><li id="login-button">{% block login %}
+                ><li class="login-area">{% block login %}
                     {% if user.is_authenticated %}
-                    <span id="user-fullname">{{ user.get_full_name }}</span>
-                    <a href="{% url 'logout' %}">LOG OUT</a>
+                    <p id="user-fullname">{{ user.get_full_name }}</p>
+                    <a id="login-button" href="{% url 'logout' %}">LOG OUT</a>
                     {% else %}
-                    <a href="{% url 'login' %}">LOG IN</a>
+                    <a id="login-button" href="{% url 'login' %}">LOG IN</a>
                     {% endif %}
                     {% endblock %}                
             </ul>

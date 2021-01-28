@@ -36,12 +36,6 @@ ul.nav-bar li a:hover {
     right: 0px;
 }
 
-#login-button a {
-    padding: 13px;
-    border: none;
-    margin: 0px;
-}
-
 #logo-item {
     position: absolute;
     left: 0px;
@@ -106,10 +100,40 @@ img.logo {
 
 #user-fullname {
     color: white;
-    padding: 10px;
+    box-sizing: border-box;
     display: inline-block;
 }
 
-.ui.label { background-color: #EEE; color: #666 !important; font-size: 13px; text-decoration: none;}
-.ui.label .icon:before { content: 'X'; font-style: normal; font-size: 12px; padding-left: 5px; position: relative; top: -1px; }
-.ui.label .icon:hover:before { color: #F00; cursor: pointer;}
+.ui.label { 
+    background-color: #EEE;
+    color: #666 !important;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.ui.label .icon:before { 
+    content: 'X';
+    font-style: normal;
+    font-size: 12px;
+    padding-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.ui.label .icon:hover:before {
+    color: #F00;
+    cursor: pointer;
+}
+
+#login-logo {
+    width: 50%;
+    height: auto;
+    position: relative;
+    left: 25%;
+}
+
+li.login-area {
+    display: block;
+    position: absolute;
+    right: 0px;
+}

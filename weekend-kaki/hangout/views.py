@@ -13,10 +13,12 @@ def home(request):
     context = {}
     return render(request, 'hangout/home.html', context)
 
+
 @login_required
 def profile(request):
     context = {}
     return render(request, 'hangout/profile.html', context)
+
 
 @login_required
 def create(request):
@@ -32,6 +34,7 @@ def create(request):
         form.save()
         return HttpResponseRedirect(reverse('home'))
 
+
 @login_required
 def list(request):
     owned_hangouts = request.user.owned_hangouts.filter(date__gte=timezone.now())
@@ -44,11 +47,13 @@ def list(request):
                }
     return render(request, 'hangout/list.html', context)
 
+
 @login_required
 def discover(request):
     hangout_list = Hangout.objects.filter(date__gte=timezone.now())
     context = {'hangout_list': hangout_list}
     return render(request, 'hangout/discover.html', context)
+
 
 @login_required
 def detail(request, hangout_id):
@@ -61,16 +66,20 @@ def detail(request, hangout_id):
         msg = None
 
     if h.owner_id == request.user.id:
-        owned = True
+        can_modify = True
     else:
-        owned = False
-        
+        can_modify = False
+
+    if h.date < timezone.now().date():
+        can_modify = False
+
     context = {'hangout_id': hangout_id,
                'form': form,
                'msg': msg,
-               'owned': owned,
+               'can_modify': can_modify,
                }
     return render(request, 'hangout/detail.html', context)
+
 
 @login_required
 def modify(request, hangout_id):
@@ -78,8 +87,8 @@ def modify(request, hangout_id):
     if h.owner_id == request.user.id:
         form = HangoutModifyForm(instance=h)
         context = {'hangout_id': hangout_id,
-                    'form': form,
-                    }
+                   'form': form,
+                   }
         if request.method == 'GET':
             return render(request, 'hangout/modify.html', context)
         else:
@@ -89,7 +98,7 @@ def modify(request, hangout_id):
                                         + '?msg=success')
     else:
         return redirect('hangout:access-denied')
-        
+
 
 @login_required
 def delete(request, hangout_id):
@@ -100,6 +109,7 @@ def delete(request, hangout_id):
         return render(request, 'hangout/delete.html', context)
     else:
         return redirect('hangout:access-denied')
+
 
 def access_denied(request):
     return render(request, 'hangout/access_denied.html', {})

@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 from polls import views as polls_views
 from hangout import views as hangout_views
+import django.contrib.auth.views as auth_views
+from hangout.forms import LoginForm
 
 urlpatterns = [
     path('', hangout_views.home, name='home'),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('hangout/', include('hangout.urls')),
+    path('accounts/login/', auth_views.LoginView.as_view(authentication_form=LoginForm), name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

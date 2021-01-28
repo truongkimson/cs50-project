@@ -14,7 +14,7 @@
 </div>
 
 
-{% if owned %}
+{% if can_modify %}
 <div>
     <a href="{% url 'hangout:modify' hangout_id %}">Modify</a>
     <a href="{% url 'hangout:delete' hangout_id %}" 
